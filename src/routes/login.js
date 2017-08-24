@@ -1,7 +1,6 @@
 import express from 'express';
 import mysql from 'mysql';
 
-// let express = require('express');
 let router = express.Router();
 
 let connection = mysql.createConnection({
@@ -25,6 +24,10 @@ router.post('/', function(req, res) {
           });
         }
   
+        if(rows[0]) {
+          console.log(rows[0].username + ' and ' + rows[0].password);
+        }
+
         if(rows[0] && rows[0].password === password) {
           console.log(204);
           return res.status(204).send()
@@ -36,11 +39,11 @@ router.post('/', function(req, res) {
         }
       })
     // } else {
-    //   console.log(400);
-    //   return res.status(400).send({
+      // console.log(400);
+      // return res.status(400).send({
         // message: 'username and password required'
-    //   })
+      // })
     // }
-  })
+})
 
   export default router;
