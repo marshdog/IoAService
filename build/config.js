@@ -27,7 +27,7 @@ var databaseCredentials = function () {
         console.log('password: ' + password);
         console.log('database: ' + database);
 
-        if (host && username && password && database) {
+        if (host && user && password && database) {
             return {
                 host: host,
                 user: user,
