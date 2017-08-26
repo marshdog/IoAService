@@ -13,7 +13,9 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "body-parser": "^1.17.2",
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "file-system": "^2.2.2",
+    "mysql": "github:mysqljs/mysql"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
