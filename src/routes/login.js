@@ -2,6 +2,8 @@ import express from 'express';
 import mysql from 'mysql';
 import config from '../config'
 
+console.log(config);
+
 let router = express.Router();
 
 let connection = mysql.createConnection({
