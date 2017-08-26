@@ -9,10 +9,10 @@ const databaseCredentials = (() => {
         let questionMark = url.indexOf('?', slash);
 
         // clearDB database credentials get extracted from DATABASE_URL
-        let host = url.substring(atSign, slash);
+        let host = url.substring(atSign + 1, slash);
         let user = url.substring(8, colon);
-        let password = url.substring(colon, atSign);
-        let database = url.substring(slash, questionMark);
+        let password = url.substring(colon + 1, atSign);
+        let database = url.substring(slash +1, questionMark);
        
         console.log('host: ' + host);
         console.log('user: ' + user);

@@ -17,10 +17,10 @@ var databaseCredentials = function () {
         var questionMark = url.indexOf('?', slash);
 
         // clearDB database credentials get extracted from DATABASE_URL
-        var host = url.substring(atSign, slash);
+        var host = url.substring(atSign + 1, slash);
         var user = url.substring(8, colon);
-        var password = url.substring(colon, atSign);
-        var database = url.substring(slash, questionMark);
+        var password = url.substring(colon + 1, atSign);
+        var database = url.substring(slash + 1, questionMark);
 
         console.log('host: ' + host);
         console.log('user: ' + user);
