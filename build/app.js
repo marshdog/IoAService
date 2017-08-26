@@ -42,5 +42,5 @@ app.use('/login', _login2.default);
 var httpServer = _http2.default.createServer(app);
 var httpsServer = _https2.default.createServer(credentials, app);
 
-httpServer.listen(8080);
+httpServer.listen(process.env.PORT || 8080);
 // httpsServer.listen(443);

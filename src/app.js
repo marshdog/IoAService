@@ -21,5 +21,5 @@ app.use('/login', loginRoute);
 let httpServer = http.createServer(app);
 let httpsServer = https.createServer(credentials, app);
 
-httpServer.listen(8080);
+httpServer.listen(process.env.PORT || 8080);
 // httpsServer.listen(443);
