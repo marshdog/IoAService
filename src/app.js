@@ -12,6 +12,10 @@ let credentials = {key: privateKey, cert: certificate};
 let app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+  }));
+
 app.use('/login', loginRoute);
 
 let httpServer = http.createServer(app);

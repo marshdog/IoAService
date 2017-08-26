@@ -1,6 +1,6 @@
 import express from 'express';
 import mysql from 'mysql';
-import config from '../../config'
+import config from '../config'
 
 let router = express.Router();
 
