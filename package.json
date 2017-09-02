@@ -5,14 +5,16 @@
   "main": "app.js",
   "scripts": {
     "start": "node build/app.js",
+    "watch": "nodemon --inspect build/app.js",
     "build": "babel src -w -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dan Marsh",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "base64url": "^2.0.0",
     "body-parser": "^1.17.2",
+    "crypto": "^1.0.1",
     "express": "^4.15.4",
     "file-system": "^2.2.2",
     "mysql": "github:mysqljs/mysql"

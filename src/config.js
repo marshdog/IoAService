@@ -2,7 +2,7 @@ const databaseCredentials = (() => {
     let url = process.env.DATABASE_URL; 
     if(url) {
         // deliminiting symbols in heroku's DATABASE_URL environemnt variable
-        let colon = url.indexOf(':', 8);
+        let colon = url.indexOf(':', 9);
         let atSign = url.indexOf('@', colon);
         let slash = url.indexOf('/', atSign);
         let questionMark = url.indexOf('?', slash);

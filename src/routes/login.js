@@ -1,6 +1,7 @@
 import express from 'express';
 import mysql from 'mysql';
 import config from '../config'
+import {genJWT} from '../auth';
 
 let router = express.Router();
 
@@ -15,6 +16,7 @@ router.post('/', function(req, res) {
     let {username, password} = req.body;
     console.log(username + ' ' + password + '');
     if(username && password) {
+      // question mark params are escaped
       let query = 'SELECT * from users where username = ?';
       console.log(query);
       connection.query(query, [username], function (err, rows, fields) {
@@ -27,11 +29,15 @@ router.post('/', function(req, res) {
 
         if(rows[0] && rows[0].password === password) {
           console.log(204);
+          let jwt = genJWT({
+            id: rows[0].id
+          })
+          res.set('Authorization', jwt)
           return res.status(204).send()
         } else {
           console.log(400);
           return res.status(400).send({
-            message: 'Invalid username or password'
+            message: 'invalid username or password'
           })
         }
       })
